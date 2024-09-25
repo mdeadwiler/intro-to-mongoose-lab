@@ -3,18 +3,18 @@ dotenv.config();
 const mongoose = require("mongoose");
 const prompt = require('prompt-sync')();
 const Todo = require('./todo.js')
-const createTodo = async () => {
 
-        let crypto = [
-            { id: '658226acdcbecfe9b99d5422', name: 'Btc', price: 6400 },
-            { id: '65825d1ead6cd90c5c430e24', name: 'Bnb', price: 46 },
-            { id: '65825d1ead6cd90c5c430e26', name: 'Eth', price: 2700 },
-            { id: '65825d1ead6cd90c5c430e28', name: 'Sol', price: 15000 },
-            { id: '65825d1ead6cd90c5c430e30', name: 'Ton', price: 6 },
-            { id: '65825d1ead6cd90c5c430e32', name: 'Xrp', price: 60 },
-            { id: '65825d1ead6cd90c5c430e34', name: 'Doge', price: 1 }
-        ];
-    
+let crypto = [
+    { id: '658226acdcbecfe9b99d5422', name: 'Btc', price: 6400 },
+    { id: '65825d1ead6cd90c5c430e24', name: 'Bnb', price: 46 },
+    { id: '65825d1ead6cd90c5c430e26', name: 'Eth', price: 2700 },
+    { id: '65825d1ead6cd90c5c430e28', name: 'Sol', price: 15000 },
+    { id: '65825d1ead6cd90c5c430e30', name: 'Ton', price: 6 },
+    { id: '65825d1ead6cd90c5c430e32', name: 'Xrp', price: 60 },
+    { id: '65825d1ead6cd90c5c430e34', name: 'Doge', price: 1 }
+];
+
+const createTodo = async () => {
     const todo = await Todo.create(crypto);
     console.log("name:", todo);
     console.log("price:", todo);
@@ -32,10 +32,10 @@ Welcome to the CRM
 
 What would you like to do?
 
-  1. Create a customer
-  2. View all customers
-  3. Update a customer
-  4. Delete a customer
+  1. Create a crypto
+  2. View all crypto
+  3. Update a crypto
+  4. Delete a crypto
   5. Quit
 
 Number of action to run: 2
@@ -45,6 +45,7 @@ id: 658226acdcbecfe9b99d5421 --  Name: Matt, Age: 43
 id: 65825d1ead6cd90c5c430e24 --  Name: Vivienne, Age: 6
 
 */
+
 
 
 
@@ -68,7 +69,7 @@ const choice = prompt('What would you like to do? ');
       console.log("\nWhat would you like to choose?");
       console.log("  1. Create Crypto Token");
       console.log("  2. View all Crypto");
-      console.log("  3. Update a CryptoPrice");
+      console.log("  3. Update crypto price");
       console.log("  4. Delete a Crypto");
       console.log("  5. Quit");
       const choice = prompt('Number to choose from: ');
@@ -79,7 +80,7 @@ const choice = prompt('What would you like to do? ');
   function createCrypto() {
       const name = prompt("Enter the Crypto name: ");
       const price = prompt("Enter the Crypto Price: ");
-      const newCrypto = { id: generateId(), name, price: parseInt(price) };//notify's computer it is a num
+      const newCrypto = { id: generateId(), name, price: parseInt(price) }; //notify's computer it is a num
       cryptoPrice.push(newCrypto);
       console.log(`Crypto ${name} added successfully.`);
       console.log(`Crypto ${price} added successfully.`);
@@ -91,6 +92,7 @@ const choice = prompt('What would you like to do? ');
       crypto.forEach(crypto => {
           console.log(`id: ${crypto.id}  Name: ${crypto.name}, Price: ${crypto.price}`);
       });
+
   }
   
   // Function to update a customer
@@ -149,7 +151,7 @@ const choice = prompt('What would you like to do? ');
   }
   
   // Start the application
-//main();
+
 
 
 /*------------------------------ Query Functions -----------------------------*/
@@ -178,6 +180,7 @@ const connect = async () => {
       await createTodo();
     
     };
+    main();
     connect();
 
 
