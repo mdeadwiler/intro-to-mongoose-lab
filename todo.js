@@ -2,8 +2,8 @@
 const mongoose = require('mongoose');
 
 const todoSchema = new mongoose.Schema({
-    text: String,
-    isComplete: Boolean,
+    name: String,
+    price: Number,
   });
   
   // models/todo.js

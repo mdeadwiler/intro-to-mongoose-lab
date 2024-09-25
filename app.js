@@ -2,17 +2,31 @@ const dotenv = require('dotenv');
 dotenv.config();
 const mongoose = require("mongoose");
 const prompt = require('prompt-sync')();
-const Todo = require('./todo.js');
+const Todo = require('./todo.js')
 const createTodo = async () => {
+
+        let crypto = [
+            { id: '658226acdcbecfe9b99d5422', name: 'Btc', price: 6400 },
+            { id: '65825d1ead6cd90c5c430e24', name: 'Bnb', price: 46 },
+            { id: '65825d1ead6cd90c5c430e26', name: 'Eth', price: 2700 },
+            { id: '65825d1ead6cd90c5c430e28', name: 'Sol', price: 15000 },
+            { id: '65825d1ead6cd90c5c430e30', name: 'Ton', price: 6 },
+            { id: '65825d1ead6cd90c5c430e32', name: 'Xrp', price: 60 },
+            { id: '65825d1ead6cd90c5c430e34', name: 'Doge', price: 1 }
+        ];
     
-    const todoData = {
-        name: String,
-        age: Number,
-    };
-    const todo = await Todo.create(todoData);
-    console.log("New todo:", todo);
+    const todo = await Todo.create(crypto);
+    console.log("name:", todo);
+    console.log("price:", todo);
 };
 
+
+
+  
+  // models/todo.js
+
+
+module.exports = Todo;
 /*
 Welcome to the CRM
 
@@ -42,15 +56,7 @@ const choice = prompt('What would you like to do? ');
 
 
   // Sample crypto database
-  let crypto = [
-      { id: '658226acdcbecfe9b99d5422', name: 'Btc', price: 6400 },
-      { id: '65825d1ead6cd90c5c430e24', name: 'Bnb', price: 46 },
-      { id: '65825d1ead6cd90c5c430e26', name: 'Eth', price: 2700 },
-      { id: '65825d1ead6cd90c5c430e28', name: 'Sol', price: 15000 },
-      { id: '65825d1ead6cd90c5c430e30', name: 'Ton', price: 6 },
-      { id: '65825d1ead6cd90c5c430e32', name: 'Xrp', price: 60 },
-      { id: '65825d1ead6cd90c5c430e34', name: 'Doge', price: 1 }
-  ];
+  
   
   // generate a new customer ID
   function generateId() {
@@ -143,8 +149,8 @@ const choice = prompt('What would you like to do? ');
   }
   
   // Start the application
-main();
-connect();
+//main();
+
 
 /*------------------------------ Query Functions -----------------------------*/
 
@@ -172,7 +178,7 @@ const connect = async () => {
       await createTodo();
     
     };
-
+    connect();
 
 
 
