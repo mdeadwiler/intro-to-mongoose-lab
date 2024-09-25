@@ -41,7 +41,7 @@ const choice = prompt('What would you like to do? ');
 
 
 
-  // Sample customer database
+  // Sample crypto database
   let crypto = [
       { id: '658226acdcbecfe9b99d5422', name: 'Btc', price: 6400 },
       { id: '65825d1ead6cd90c5c430e24', name: 'Bnb', price: 46 },
@@ -144,7 +144,7 @@ const choice = prompt('What would you like to do? ');
   
   // Start the application
 main();
-//connect();
+connect();
 
 /*------------------------------ Query Functions -----------------------------*/
 
